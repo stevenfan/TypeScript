@@ -2180,6 +2180,7 @@ namespace ts {
         /* @internal */ moduleAugmentations: LiteralExpression[];
         /* @internal */ patternAmbientModules?: PatternAmbientModule[];
         /* @internal */ ambientModuleNames: string[];
+        /* @internal */ hasCheckDirective: boolean;
     }
 
     export interface ScriptReferenceHost {
