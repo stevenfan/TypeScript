@@ -2181,6 +2181,7 @@ namespace ts {
         /* @internal */ patternAmbientModules?: PatternAmbientModule[];
         /* @internal */ ambientModuleNames: string[];
         /* @internal */ hasCheckDirective: boolean;
+        /* @internal */ hasTypesDirective: boolean;
     }
 
     export interface ScriptReferenceHost {
@@ -3155,6 +3156,7 @@ namespace ts {
         allowSyntheticDefaultImports?: boolean;
         allowUnreachableCode?: boolean;
         allowUnusedLabels?: boolean;
+        allowTypesInJsFiles?: boolean;
         alwaysStrict?: boolean;
         baseUrl?: string;
         charset?: string;

@@ -464,7 +464,12 @@ namespace ts {
             type: "boolean",
             experimental: true,
             description: Diagnostics.Show_errors_in_a_js_file
-        }
+        },
+        {
+            name: "allowTypesInJsFiles",
+            type: "boolean",
+            experimental: true
+       }
     ];
 
     /* @internal */

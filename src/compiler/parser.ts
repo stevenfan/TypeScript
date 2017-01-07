@@ -5798,6 +5798,7 @@ namespace ts {
             const amdDependencies: { path: string; name: string }[] = [];
             let amdModuleName: string;
             let hasCheckDirective = false;
+            let hasTypesDirective = false;
 
             // Keep scanning all the leading trivia in the file until we get to something that
             // isn't trivia.  Any single line comment will be analyzed to see if it is a
@@ -5858,6 +5859,9 @@ namespace ts {
 
                     const checkDirectiveRegEx = /^\/\/\s*@check\s*/gim;
                     hasCheckDirective = !!checkDirectiveRegEx.exec(comment);
+
+                    const typesDirectiveRegEx = /^\/\/\s*@types\s*/gim;
+                    hasTypesDirective = !!typesDirectiveRegEx.exec(comment);
                 }
             }
 
@@ -5866,6 +5870,7 @@ namespace ts {
             sourceFile.amdDependencies = amdDependencies;
             sourceFile.moduleName = amdModuleName;
             sourceFile.hasCheckDirective = hasCheckDirective;
+            sourceFile.hasTypesDirective = hasTypesDirective;
         }
 
         function setExternalModuleIndicator(sourceFile: SourceFile) {

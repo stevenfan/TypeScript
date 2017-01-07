@@ -912,10 +912,13 @@ namespace ts {
 
         function getJavaScriptSyntacticDiagnosticsForFile(sourceFile: SourceFile): Diagnostic[] {
             return runWithCancellationToken(() => {
+                if (options.allowTypesInJsFiles || sourceFile.hasTypesDirective) {
+                    return emptyArray;
+                }
+
                 const diagnostics: Diagnostic[] = [];
                 let parent: Node = sourceFile;
                 walk(sourceFile);
-
                 return diagnostics;
 
                 function walk(node: Node) {
