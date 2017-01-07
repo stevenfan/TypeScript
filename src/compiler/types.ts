@@ -3157,6 +3157,7 @@ namespace ts {
         alwaysStrict?: boolean;
         baseUrl?: string;
         charset?: string;
+        checkJsFiles?: boolean;
         /* @internal */ configFilePath?: string;
         declaration?: boolean;
         declarationDir?: string;
