@@ -519,32 +519,32 @@ namespace ts.projectSystem {
             const commander = {
                 path: "/a/data/node_modules/@types/commander/index.d.ts",
                 content: "declare const commander: { x: number }",
-                typings: "@types/commander"
+                typings: "@types/commander@2.2"
             };
             const jquery = {
                 path: "/a/data/node_modules/@types/jquery/index.d.ts",
                 content: "declare const jquery: { x: number }",
-                typings: "@types/jquery"
+                typings: "@types/jquery@2.2"
             };
             const lodash = {
                 path: "/a/data/node_modules/@types/lodash/index.d.ts",
                 content: "declare const lodash: { x: number }",
-                typings: "@types/lodash"
+                typings: "@types/lodash@2.2"
             };
             const cordova = {
                 path: "/a/data/node_modules/@types/cordova/index.d.ts",
                 content: "declare const cordova: { x: number }",
-                typings: "@types/cordova"
+                typings: "@types/cordova@2.2"
             };
             const grunt = {
                 path: "/a/data/node_modules/@types/grunt/index.d.ts",
                 content: "declare const grunt: { x: number }",
-                typings: "@types/grunt"
+                typings: "@types/grunt@2.2"
             };
             const gulp = {
                 path: "/a/data/node_modules/@types/gulp/index.d.ts",
                 content: "declare const gulp: { x: number }",
-                typings: "@types/gulp"
+                typings: "@types/gulp@2.2"
             };
 
             const host = createServerHost([lodashJs, commanderJs, file3]);
@@ -982,7 +982,7 @@ namespace ts.projectSystem {
                         return;
                     }
                     if (response.kind === server.EventEndInstallTypes) {
-                        assert.deepEqual(response.packagesToInstall, ["@types/commander"]);
+                        assert.deepEqual(response.packagesToInstall, ["@types/commander@2.2"]);
                         seenTelemetryEvent = true;
                         return;
                     }

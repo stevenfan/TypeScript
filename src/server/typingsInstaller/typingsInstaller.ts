@@ -295,7 +295,8 @@ namespace ts.server.typingsInstaller {
                 this.log.writeLine(`Installing typings ${JSON.stringify(typingsToInstall)}`);
             }
             const filteredTypings = this.filterTypings(typingsToInstall);
-            const scopedTypings = filteredTypings.map(x => `@types/${x}`);
+            const versionId = "ts" + ts.version.split(".").slice(0, 2).join("."); // e.g. "ts2.2"
+            const scopedTypings = filteredTypings.map(x => `@types/${x}@${versionId}`);
             if (scopedTypings.length === 0) {
                 if (this.log.isEnabled()) {
                     this.log.writeLine(`All typings are known to be missing or invalid - no need to go any further`);
